@@ -14,10 +14,8 @@ class Player:
         Args:
             Please update comments
         """
-        self.dice = []
-        self.is_playing = True
-        self.score = 0
-        self.total_score = 0
+        self.card_number1 = 0
+        self.card_number2 = 0
 
         for i in range(5):
             die = Die()
@@ -75,3 +73,20 @@ class Player:
         print(f"You rolled: {values}")
         print(f"Your score is: {self.total_score}\n")
         self.is_playing == (self.score > 0)
+
+    def get_high(self):
+        """If player chooses High and gets it right we add 100 points
+        But if they get it wrong they lose 75 points (Jessica, please update this comment in the way you think it's better)"""
+        if self.card_number2 > self.card_number1:
+            return +100
+        elif self.card_number2 < self.card_number1:
+            return -75
+
+
+    def get_low(self):
+        """If player chooses Low and gets it right we add 100 points
+        But if they get it wrong they lose 75 points (Jessica, please update this comment in the way you think it's better)"""
+        if self.card_number2 < self.card_number1:
+            return self.point_total + 100
+        elif self.card_number2 > self.card_number1:
+            return self.point_total - 75
