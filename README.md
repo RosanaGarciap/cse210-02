@@ -23,7 +23,11 @@ To run this script `python>3.5` is recommended
 
 ## Classes
 
-### Class Card
-
+### Class Cards
+Hilo Game is played using cards, each card have a number from 1 to 13. The class Cards contains a value attribute assigned randomly. The Player starts with a card take a second from a deck of cards and guess if it is greater or lower than the current card. The player earns 100 points if they guessed correctly, loses 75 points if they guessed incorrectly, and lose the game if 0 points are reached.
 ### Class Player
-Following the logic of the real game, every game has a "player" and this player is responsible of start and manage the game and keep control of it during it's development, therefore, the class Player is the responsible of start the game, take the cards values and compare them
+Following the logic of the real game, every game has a "player" and this player is responsible of start and manage the game and keep control of it during it's development, therefore, the class Player is the responsible of start the game, take the cards values and compare them.
+
+## Programming Logic
+
+
