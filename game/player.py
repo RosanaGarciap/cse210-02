@@ -2,7 +2,9 @@ from game.cards import Cards
 
 
 class Player:
-    """Please update comments
+    """A player who directs the game.
+
+    The responsibility of the Player is to control the game.
 
     Attributes:
         Please update comments  

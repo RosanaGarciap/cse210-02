@@ -2,26 +2,41 @@ import random
 
 
 class Cards:
-    """Please update comments
+    """A deck of cards. Cards included are 1-13.
+
+    The value of the card is used for the main function of the game.
    
     Attributes:
-        Please update comments
+        value (int): The number of the card drawn.
     """
 
     def __init__(self):
-        """Please update comments
+        """Constructs instances of cards.
 
         Args:
-            Please update comments
+            self (card): an instance of a card. 
         """
-        self.value = 0
-        self.points = 0
+        self.card_is = random.randint(1, 13)
+        self.next_card = 0
 
-    def roll(self):
-        """Please update comments
+    def pull(self):
+
+        """Sets the value of the first card and generates a random number for the second comparison card.
+
+        Args:
+            self (card): an instance of a card.
+        """
+        self.next_card = self.card_is
+        self.card_is = random.randint(1, 13)
+
+    def compare(self):
+
+        """Sets comparison function for the game. Sets the return of 'h' or 'l' to compare to user input.
         
         Args:
-            Please update comments
-        """
-        self.value = random.randint(1, 6)
-        self.points = 50 if self.value == 5 else 100 if self.value == 1 else 0
+            self (card): an instance of a card. """
+
+        if self.card_is > self.next_card:
+            return "h"
+        elif self.card_is < self.next_card:
+            return "l"
