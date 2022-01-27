@@ -18,6 +18,23 @@ To run this script `python>3.5` is recommended
 ### Example
 
 ```
+$ cd /my/path/to/cse210-02
+$ python __main__.py
+The card is: 13
+Higher or lower? [h/l]: h
+Your score is: 225
+Play again [y/n]: y
+
+The card is: 10
+Higher or lower? [h/l]: h
+Your score is: 325
+Play again [y/n]: y
+
+The card is: 12
+Higher or lower? [h/l]: h
+Your score is: 250
+Play again [y/n]: n
+$
 
 ```
 
