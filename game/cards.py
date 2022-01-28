@@ -19,7 +19,7 @@ class Cards:
         self.value = random.choice([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13])
 
     def getValue(self):
-        """Please update comments
+        """Returns The value of the card.
         
         Args:
             self (card): an instance of a card.

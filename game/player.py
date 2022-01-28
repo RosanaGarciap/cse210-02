@@ -9,34 +9,36 @@ class Player:
     The responsibility of the Player is to control the game.
 
     Attributes:
-        Please update comments  
+        currenCard (int): The current card value.
+        is_playing (boolean): Whether or not the game is being played.
+        score (int): The score for the game.
     """
 
     def __init__(self):
-        """Please update comments
+        """Constructs a new Player.
         
         Args:
-            Please update comments
+            self (Player): an instance of Player.
         """
         self.currentCard = Cards()
         self.is_playing = True
         self.score = 300
 
     def start_game(self):
-        """Please update comments
+        """Starts the game by running the main game loop.
         
         Args:
-            Please update comments
+            self (Player): an instance of Player.
         """
         while self.is_playing:
             self.get_inputs()
             self.do_outputs()
 
     def get_inputs(self):
-        """Please update comments
+        """Ask the user if the next card will be higher or lower than the current card.
 
         Args:
-            Please update comments
+            self (Player): an instance of Player.
         """
         val = self.currentCard.value
         print("The card is: %d" %val)
@@ -50,10 +52,10 @@ class Player:
             self.get_low(oldCard,newCard)
 
     def do_updates(self, guess, newCard):
-        """Please update comments
+        """Updates the player's score.
 
         Args:
-            Please update comments
+            self (Player): an instance of Player.
         """
         #updating score
         
@@ -63,10 +65,10 @@ class Player:
 
         
     def do_outputs(self):
-        """Please update comments
+        """Displays the cards and the score. Also asks if the want to keep playing
 
         Args:
-            Please update comments
+            self (Player): an instance of Player.
         """
         print("Your score is: %d" %self.score)
         v = input("Play again [y/n]: ")
