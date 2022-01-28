@@ -16,7 +16,7 @@ class Cards:
         Args:
             self (card): an instance of a card. 
         """
-        self.value = random.choice([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13])
+        self.value = random.randint(1, 13)
 
     def getValue(self):
         """Returns The value of the card.

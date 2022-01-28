@@ -1,5 +1,3 @@
-# import random and Cards class
-from random import random
 from game.cards import Cards
 
 
@@ -42,14 +40,23 @@ class Player:
         """
         val = self.currentCard.value
         print("The card is: %d" %val)
-        playerIn = input("Higher or lower? [h/l]: ")
-        oldCard = self.currentCard
-        newCard = Cards()
-        if(playerIn == "h"):
-            self.get_high(oldCard, newCard)
 
-        elif(playerIn == "l"):
-            self.get_low(oldCard,newCard)
+        #This will keep looping until the player enters either h or l
+        playerIn = ""
+        while playerIn != "h" or playerIn != "l":
+            playerIn = input("Higher or lower? [h/l]: ")
+            oldCard = self.currentCard
+            newCard = Cards()
+            if(playerIn == "h"):
+                self.get_high(oldCard, newCard)
+                break
+
+            elif(playerIn == "l"):
+                self.get_low(oldCard, newCard)
+                break
+            else:
+                print("Invalid input")
+                print()
 
     def do_updates(self, guess, newCard):
         """Updates the player's score.
@@ -58,8 +65,9 @@ class Player:
             self (Player): an instance of Player.
         """
         #updating score
-        
         self.score += guess
+        if (self.score <= 0):
+            self.is_playing = False
         #updating card
         self.currentCard.value = newCard
 
@@ -70,30 +78,43 @@ class Player:
         Args:
             self (Player): an instance of Player.
         """
-        print("Your score is: %d" %self.score)
-        v = input("Play again [y/n]: ")
-        if(v=="n" or self.score <= 0):
+        print(f"Your score is: {self.score}")
+        print(f"The card was: {self.currentCard.value}")
+
+        if(self.score <= 0):
             self.is_playing = False
-        else:
-            print("")
+            return
+
+        #This will keep looping until the user enters either y or n
+        v = ""
+        while v != "n" or v != "y":
+            v = input("Play again [y/n]: ")
+            if(v == "n"):
+                self.is_playing = False
+                break
+            elif(v == "y"):
+                print("")
+                break
+            else:
+                print("Invalid input")
 
 
-    def get_high(self,c1,c2):
+    def get_high(self, c1, c2):
         """If player chooses High and gets it right we add 100 points
         But if they get it wrong they lose 75 points (Jessica, please update this comment in the way you think it's better)"""
         
         if c2.value > c1.value:
-            self.do_updates(100,c2.value)
+            self.do_updates(100, c2.value)
             
         elif c2.value < c1.value:
-            self.do_updates(-75,c2.value)
+            self.do_updates(-75, c2.value)
 
 
-    def get_low(self,c1,c2):
+    def get_low(self, c1, c2):
         """If player chooses Low and gets it right we add 100 points
         But if they get it wrong they lose 75 points (Jessica, please update this comment in the way you think it's better)"""
         if c2.value < c1.value:
-            self.do_updates(100,c2.value)
+            self.do_updates(100, c2.value)
         elif c2.value > c1.value:
             self.do_updates(-75, c2.value)
         else:
