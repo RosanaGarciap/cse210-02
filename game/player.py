@@ -101,7 +101,7 @@ class Player:
 
     def get_high(self, c1, c2):
         """If player chooses High and gets it right we add 100 points
-        But if they get it wrong they lose 75 points (Jessica, please update this comment in the way you think it's better)"""
+        But if they get it wrong they lose 75 points."""
         
         if c2.value > c1.value:
             self.do_updates(100, c2.value)
@@ -112,7 +112,7 @@ class Player:
 
     def get_low(self, c1, c2):
         """If player chooses Low and gets it right we add 100 points
-        But if they get it wrong they lose 75 points (Jessica, please update this comment in the way you think it's better)"""
+        But if they get it wrong they lose 75 points."""
         if c2.value < c1.value:
             self.do_updates(100, c2.value)
         elif c2.value > c1.value:
