@@ -45,6 +45,11 @@ Hilo Game is played using cards, each card have a number from 1 to 13. The class
 ### Class Player
 Following the logic of the real game, every game has a "player" and this player is responsible of start and manage the game and keep control of it during it's development, therefore, the class Player is the responsible of start the game, take the cards values and compare them.
 
-## Programming Logic
+## Programming Logic decisions
+- Since the rules don't specify if there are only 13 different cards or an unlimited number, it was decided that the current implementation will considerate an unlimited number of cards with possible values between 1 and 13.
 
-
+- The game logic was divided in four steps and each one was handled with its own function, those steps consist of:
+1- Ask for inputs
+2- compare values
+3- Update results
+4- show outputs
